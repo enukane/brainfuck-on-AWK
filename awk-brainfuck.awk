@@ -16,8 +16,7 @@ BEGIN{
 {#for each line
 	num_char = split($0,array_str, "");
 	i = 1;
-	while(i <= num_char)
-	{
+	while (i <= num_char){
 		j = i -1;
 		bfk_string[char_pos + j] = array_str[i];
 		i++;
@@ -29,27 +28,27 @@ BEGIN{
 
 function do_func(char)
 {
-	if( char == ">" ) {
+	if ( char == ">" ) {
 		dprint("inc pointer");
 		inc_pointer();	
 	}
 
-	if( char == "<" ) {
+	if ( char == "<" ) {
 		dprint("dec pointer");
 		dec_pointer();
 	}
 
-	if( char == "+" ) {
+	if ( char == "+" ) {
 		dprint("add");
 		inc_current_value();
 	}
 
-	if( char == "-" ) {
+	if ( char == "-" ) {
 		dprint("sub");
 		dec_current_value();
 	}
 
-	if( char == "." ) {
+	if ( char == "." ) {
 		dprint("show");
 		print_current_value_char();
 	}
@@ -67,8 +66,7 @@ function dec_pointer()
 
 function inc_current_value()
 {
-	if(tape[tape_pos] == "")
-	{
+	if (tape[tape_pos] == ""){
 		tape[tape_pos] = 0;
 	}
 
@@ -78,8 +76,7 @@ function inc_current_value()
 
 function dec_current_value()
 {
-	if(tape[tape_pos] == "")
-	{
+	if (tape[tape_pos] == ""){
 		tape[tape_pos] = 0;
 	}
 
@@ -99,7 +96,7 @@ function get_current_value(){
 
 function get_next_char()
 {
-	if( current_pos > char_end){
+	if ( current_pos > char_end){
 		return 0;
 	}
 	this_char = bfk_string[current_pos];
@@ -116,7 +113,7 @@ function jump_forward()
 	
 	stack_count = 0;
 
-	while(1){
+	while (1) {
 		char = get_next_char();
 
 		if( char == 0 ){ # end of file

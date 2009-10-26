@@ -1,0 +1,12 @@
+-- program name --
+awk-brainfuck
+
+-- what is this? --
+brainfuck implementation of AWK.
+
+-- how to use --
+write brainfuck program texts, as "helloworld.bfk" is.
+then you can execute it as below
+
+	$ awk -f awk-brainfuck.awk helloworld.bfk
+

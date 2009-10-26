@@ -203,6 +203,7 @@ END {
 			continue;
 		}
 
+		# other character, function
 		do_func(char);
 	}
 }
